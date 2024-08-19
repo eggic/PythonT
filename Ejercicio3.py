@@ -1,3 +1,18 @@
+"""
+#Situación Problemática:
+Una concesionaria de autos vende vehículos de diferentes marcas, modelos y características.
+El sistema necesita registrar las características principales de cada auto, calcular su precio 
+de venta basado en un margen de ganancia del 40%, y generar un ticket que muestre un resumen de
+la venta.
+
+#Explicación del Código:
+Este código permite registrar la información de un auto que se va a vender en una concesionaria.
+Se le pide al usuario que ingrese los datos del auto, como marca, modelo, año, color, tipo, precio
+de compra, número de puertas, tipo de motor, tipo de transmisión, y tipo de combustible. Luego, el
+sistema calcula el precio de venta aplicando un margen de ganancia del 40% y genera un ticket con 
+todos los detalles del auto, incluyendo el precio de venta.
+
+"""
 class Auto:
     def __init__(self, marca, modelo, año, color, tipo, precio_compra, numero_puertas, tipo_motor, tipo_transmision, tipo_combustible):
         self.marca = marca

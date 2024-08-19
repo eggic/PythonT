@@ -1,5 +1,15 @@
+"""
+Un almacén que vende dispositivos electrónicos de la nueva marca "PHR" necesita un sistema para 
+registrar las características de los productos que venden (celulares, tablets y portátiles). Dado
+que todos los productos son importados, el precio de venta se calcula multiplicando el precio de 
+compra por 1.7. Además, el sistema creado permite registrar múltiples productos en una sola sesión,
+generar un ticket de venta, y preguntar al comprador si desea registrar otro producto, esto en
+el dado caso que se quiera utilizar el sistema para ejecutar un recibo
+"""
+
 class DispositivoElectronico:
     def __init__(self, tipo, modelo, tamaño_pantalla, capacidad_almacenamiento, ram, precio_compra):
+        self.marca = "PHR"  # Todos los dispositivos son de la marca PHR
         self.tipo = tipo  
         self.modelo = modelo
         self.tamaño_pantalla = tamaño_pantalla
@@ -13,6 +23,7 @@ class DispositivoElectronico:
     def generar_ticket(self):
         ticket = (
             f"--- TICKET DE VENTA ---\n"
+            f"Marca: {self.marca}\n"
             f"Tipo: {self.tipo}\n"
             f"Modelo: {self.modelo}\n"
             f"Tamaño de Pantalla: {self.tamaño_pantalla}\"\n"
@@ -26,7 +37,7 @@ class DispositivoElectronico:
 
 def registrar_dispositivo():
     print("- Registro de Dispositivo Electrónico -")
-    tipo = input("Marca (Celular/Tablet/Portátil): ").capitalize()
+    tipo = input("Tipo (Celular/Tablet/Portátil): ").capitalize()
     modelo = input("Modelo: ")
     tamaño_pantalla = float(input("Tamaño de Pantalla (en pulgadas): "))
     capacidad_almacenamiento = int(input("Capacidad de Almacenamiento (en GB): "))
@@ -36,7 +47,18 @@ def registrar_dispositivo():
     dispositivo = DispositivoElectronico(tipo, modelo, tamaño_pantalla, capacidad_almacenamiento, ram, precio_compra)
     return dispositivo
 
-dispositivo = registrar_dispositivo()
+def main():
+    while True:
+        dispositivo = registrar_dispositivo()
+        ticket = dispositivo.generar_ticket()
+        print("\n" + ticket)
+        
+        # Preguntar si el comprador desea registrar otro producto
+        otra_compra = input("¿Deseas registrar otro producto? (S/N): ").lower()
+        if otra_compra != 's':
+            break
 
-ticket = dispositivo.generar_ticket()
-print("\n" + ticket)
+    print("Gracias por tu compra.")
+
+# Ejecutar el programa
+main()

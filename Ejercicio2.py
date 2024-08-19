@@ -1,3 +1,18 @@
+"""
+#Situación Problemática:
+Un cliente llega a una papelería y desea comprar cuadernos y lápices. La
+papelería tiene diferentes tipos y marcas de cuadernos y lápices, con precios
+que dependen del tipo. El cliente puede elegir cuadernos grandes o pequeños, y 
+lápices de grafito o de color. El sistema debe calcular el precio de venta basado 
+en el margen de ganancia y generar un resumen de la compra.
+
+Explicación del Código:
+El código simula el proceso de compra en una papelería, donde el cliente
+puede seleccionar cuadernos y lápices. Basado en la selección del cliente,
+se calcula el precio final aplicando un margen de ganancia del 30%. El sistema
+luego muestra un resumen detallado de la compra.
+"""
+
 class Papeleria:
     def __init__(self):
         self.Cuaderno = ""
