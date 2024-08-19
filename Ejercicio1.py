@@ -1,4 +1,5 @@
-#Ejercicio 1
+#Ejercicio 1 - Situación Problema: Este ejercicio podría basarse en una situación donde una veterinaria necesita un sistema para registrar la información de los perros que atienden, incluyendo detalles del perro y si ya ha sido atendido previamente.
+#La veterinaria necesita mantener un registro preciso de los perros que atienden, junto con la información del dueño y si el perro ha sido atendido antes. Esto les permite hacer un seguimiento adecuado de la salud del perro y brindar un mejor servicio. La información registrada incluye detalles como el nombre, raza, edad, peso (que también determina si es un perro grande o pequeño), color, nombre del dueño, y contacto del dueño. Al final, se muestra un resumen de la información registrada, lo que facilita la verificación de los datos ingresados.
 class Perro:
     def __init__(self, nombre, raza, edad, peso, color, dueño, contacto, atendido):
         self.nombre = nombre
